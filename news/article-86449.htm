@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashfanqiang.github.io/news/article-86449.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>vue中组件之间调用方法</title>
+        <meta name="description" content="1.vue中子组件调用父组件的方法  1&gt;第一种方法是直接在子组件中通过this.$parent.event来调用父组件的方法。 父组件 &lt;template&gt;   &lt;div&g" />
+        <link rel="icon" href="/assets/website/img/clashnodegithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash翻墙节点 节点订阅中文官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashfanqiang.github.io/news/article-86449.htm" />
+    <meta property="og:site_name" content="Clash翻墙节点 节点订阅中文官网" />
+    <meta property="og:title" content="vue中组件之间调用方法" />
+    <meta property="og:image" content="https://clashfanqiang.github.io/uploads/20240611/2d273b472223254b320d4e220dafc215.webp" />
+        <meta property="og:release_date" content="2025-04-01T19:49:20" />
+    <meta property="og:updated_time" content="2025-04-01T19:49:20" />
+        <meta property="og:description" content="1.vue中子组件调用父组件的方法  1&gt;第一种方法是直接在子组件中通过this.$parent.event来调用父组件的方法。 父组件 &lt;template&gt;   &lt;div&g" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/clashnodegithub/bootstrap-5.0.0-beta2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/clashnodegithub/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/clashnodegithub/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/clashnodegithub/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/clashnodegithub/main.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue中组件之间调用方法">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PRY7JDGM37"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PRY7JDGM37');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader end -->
+    <!-- ========================= header start ========================= -->
+    <header class="header">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                                                            <a class="navbar-brand" href="/">Clash翻墙节点</a>
+                                                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <div class="ms-auto">
+                                    <ul id="nav" class="navbar-nav ms-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                            <!-- navbar collapse -->
+                        </nav>
+                        <!-- navbar -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- navbar area -->
+    </header>
+    <!-- ========================= header end ========================= -->
+    <!-- ========================= hero-section start ========================= -->
+    <section id="home" class="hero-section">
+        <div class="hero-wrapper" style="height: 250px;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-10">
+                        <div class="hero-content">
+                            <h1>vue中组件之间调用方法</h1>
+                            <p>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= hero-section end ========================= -->
+    <!-- ========================= about-section start ========================= -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2> <a id="1vue_0" rel="nofollow"></a>1.vue中子组件调用父组件的方法</h2> <h5> <a id="1thisparentevent_1" rel="nofollow"></a>1&gt;第一种方法是直接在子组件中通过this.$parent.event来调用父组件的方法。</h5> <p>父组件</p> <pre><code class="prism language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>   <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>child<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>child<span class="token operator">&gt;</span>   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>   <span class="token keyword">import</span> child <span class="token keyword">from</span> <span class="token string">'~/components/dam/child'</span><span class="token punctuation">;</span>   <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{<!-- --></span>     components<span class="token punctuation">:</span> <span class="token punctuation">{<!-- --></span>       child     <span class="token punctuation">}</span><span class="token punctuation">,</span>     methods<span class="token punctuation">:</span> <span class="token punctuation">{<!-- --></span>       <span class="token function">fatherMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'测试'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token punctuation">}</span>     <span class="token punctuation">}</span>   <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span> </code></pre> <p>子组件</p> <pre><code class="prism language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>   <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>button @click<span class="token operator">=</span><span class="token string">"childMethod()"</span><span class="token operator">&gt;</span>点击<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>   <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{<!-- --></span>     methods<span class="token punctuation">:</span> <span class="token punctuation">{<!-- --></span>       <span class="token function">childMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token keyword">this</span><span class="token punctuation">.</span>$parent<span class="token punctuation">.</span><span class="token function">fatherMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token punctuation">}</span>     <span class="token punctuation">}</span>   <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span> </code></pre> <h5> <a id="2emit_42" rel="nofollow"></a>2&gt;第二种方法是在子组件里用$emit向父组件触发一个事件，父组件监听这个事件就行了。</h5> <p>父组件</p> <pre><code class="prism language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>   <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>child @fatherMethod<span class="token operator">=</span><span class="token string">"fatherMethod"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>child<span class="token operator">&gt;</span>   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>   <span class="token keyword">import</span> child <span class="token keyword">from</span> <span class="token string">'~/components/dam/child'</span><span class="token punctuation">;</span>   <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{<!-- --></span>     components<span class="token punctuation">:</span> <span class="token punctuation">{<!-- --></span>       child     <span class="token punctuation">}</span><span class="token punctuation">,</span>     methods<span class="token punctuation">:</span> <span class="token punctuation">{<!-- --></span>       <span class="token function">fatherMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'测试'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token punctuation">}</span>     <span class="token punctuation">}</span>   <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span> </code></pre> <p>子组件</p> <pre><code class="prism language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>   <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>button @click<span class="token operator">=</span><span class="token string">"childMethod()"</span><span class="token operator">&gt;</span>点击<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>   <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{<!-- --></span>     methods<span class="token punctuation">:</span> <span class="token punctuation">{<!-- --></span>       <span class="token function">childMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'fatherMethod'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token punctuation">}</span>     <span class="token punctuation">}</span>   <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span> </code></pre> <h5> <a id="3__83" rel="nofollow"></a>3&gt; 第三种是父组件把方法传入子组件中，在子组件里直接调用这个方法</h5> <p>父组件</p> <pre><code class="prism language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>   <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>child <span class="token punctuation">:</span>fatherMethod<span class="token operator">=</span><span class="token string">"fatherMethod"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>child<span class="token operator">&gt;</span>   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>   <span class="token keyword">import</span> child <span class="token keyword">from</span> <span class="token string">'~/components/dam/child'</span><span class="token punctuation">;</span>   <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{<!-- --></span>     components<span class="token punctuation">:</span> <span class="token punctuation">{<!-- --></span>       child     <span class="token punctuation">}</span><span class="token punctuation">,</span>     methods<span class="token punctuation">:</span> <span class="token punctuation">{<!-- --></span>       <span class="token function">fatherMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'测试'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token punctuation">}</span>     <span class="token punctuation">}</span>   <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span> </code></pre> <p>子组件</p> <pre><code class="prism language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>   <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>button @click<span class="token operator">=</span><span class="token string">"childMethod()"</span><span class="token operator">&gt;</span>点击<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>   <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{<!-- --></span>     props<span class="token punctuation">:</span> <span class="token punctuation">{<!-- --></span>       fatherMethod<span class="token punctuation">:</span> <span class="token punctuation">{<!-- --></span>         type<span class="token punctuation">:</span> Function<span class="token punctuation">,</span>         <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token keyword">null</span>       <span class="token punctuation">}</span>     <span class="token punctuation">}</span><span class="token punctuation">,</span>     methods<span class="token punctuation">:</span> <span class="token punctuation">{<!-- --></span>       <span class="token function">childMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>fatherMethod<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>           <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">fatherMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span>       <span class="token punctuation">}</span>     <span class="token punctuation">}</span>   <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span> </code></pre> <h2> <a id="2_132" rel="nofollow"></a>2.父组件调用子组件的方法</h2> <h5> <a id="1ref_133" rel="nofollow"></a>1&gt;通过ref直接调用子组件的方法</h5> <pre><code class="prism language-javascript"><span class="token comment">//父组件中</span>  <span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>         <span class="token operator">&lt;</span>Button @click<span class="token operator">=</span><span class="token string">"handleClick"</span><span class="token operator">&gt;</span>点击调用子组件方法<span class="token operator">&lt;</span><span class="token operator">/</span>Button<span class="token operator">&gt;</span>         <span class="token operator">&lt;</span>Child ref<span class="token operator">=</span><span class="token string">"child"</span><span class="token operator">/</span><span class="token operator">&gt;</span>     <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>      <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span> <span class="token keyword">import</span> Child <span class="token keyword">from</span> <span class="token string">'./child'</span><span class="token punctuation">;</span>  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{<!-- --></span>     methods<span class="token punctuation">:</span> <span class="token punctuation">{<!-- --></span>         <span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>               <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>child<span class="token punctuation">.</span><span class="token function">sing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span><span class="token punctuation">,</span>     <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>   <span class="token comment">//子组件中</span>  <span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>   <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>我是子组件<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span> <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{<!-- --></span>   methods<span class="token punctuation">:</span> <span class="token punctuation">{<!-- --></span>     <span class="token function">sing</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'我是子组件的方法'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span><span class="token punctuation">,</span>   <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span> </code></pre> <h5> <a id="2emiton_173" rel="nofollow"></a>2&gt;通过组件的$emit、$on方法；</h5> <pre><code class="prism language-javascript"><span class="token comment">//父组件中</span>  <span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>         <span class="token operator">&lt;</span>Button @click<span class="token operator">=</span><span class="token string">"handleClick"</span><span class="token operator">&gt;</span>点击调用子组件方法<span class="token operator">&lt;</span><span class="token operator">/</span>Button<span class="token operator">&gt;</span>         <span class="token operator">&lt;</span>Child ref<span class="token operator">=</span><span class="token string">"child"</span><span class="token operator">/</span><span class="token operator">&gt;</span>     <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>      <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span> <span class="token keyword">import</span> Child <span class="token keyword">from</span> <span class="token string">'./child'</span><span class="token punctuation">;</span>  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{<!-- --></span>     methods<span class="token punctuation">:</span> <span class="token punctuation">{<!-- --></span>         <span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>                <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>child<span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">"childmethod"</span><span class="token punctuation">)</span>    <span class="token comment">//子组件$on中的名字</span>         <span class="token punctuation">}</span><span class="token punctuation">,</span>     <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>  <span class="token comment">//子组件中</span>  <span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>我是子组件<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span> <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{<!-- --></span>     <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$nextTick</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>             <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$on</span><span class="token punctuation">(</span><span class="token string">'childmethods'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>                 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'我是子组件方法'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span> </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>下一个：<a href="/news/article-86450.htm">C#把EXCEL数据转换成DataTable_C#教程_</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-4-1-free-node-subscribe.htm" title="Clash翻墙节点 | 4月1日20M/S|免费SSR/Shadowrocket/V2ray/Clash订阅节点分享">Clash翻墙节点 | 4月1日20M/S|免费SSR/Shadowrocket/V2ray/Clash订阅节点分享</a></li>
+                        <li class="py-2"><a href="/news/article-86450.htm" title="C#把EXCEL数据转换成DataTable_C#教程_">C#把EXCEL数据转换成DataTable_C#教程_</a></li>
+                        <li class="py-2"><a href="/news/article-86449.htm" title="vue中组件之间调用方法">vue中组件之间调用方法</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= about-section end ========================= -->
+        <!-- ========================= footer start ========================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <p>
+                    Clash翻墙节点 节点订阅中文官网 版权所有 Powered by WordPress
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer end ========================= -->
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/clashnodegithub/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnodegithub/bootstrap-5.0.0-beta2.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnodegithub/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnodegithub/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnodegithub/polyfill.js"></script>
+    <script src="/assets/website/js/frontend/clashnodegithub/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
