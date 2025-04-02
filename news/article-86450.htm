@@ -43,8 +43,7 @@
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
     <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
     <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
-    
-<!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PRY7JDGM37"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -156,6 +155,7 @@
                   				  				  				<h3><strong>C#实现EXCEL表格转DataTable</strong></h3> <p>C#代码实现把Excel文件转化为DataTable，根据Excel的文件后缀名不同，用不同的方法来进行实现，下面通过根据Excel文件的两种后缀名（*.xlsx和*.xls）分别来实现。获取文件后缀名的方法是：Path.GetExtension(fileName)方法，通过引用：using System.IO;实现代码如下：（其中以下代码中出现的filename都是带盘符的绝对路径）</p> <p>根据Excel文件的后缀名不同调用的主方法</p> <div class="ay1code"> <pre class="brush:csharp;">private DataTable FileToDataTable(string fileName)      {          DataTable dt = new DataTable();          string extendName = Path.GetExtension(fileName);//获取文件的后缀名          switch (extendName.ToLower())          {              case ".xls":                  dt = XlsToDataTable(fileName);                  break;              case ".xlsx":                  dt = XlsxToDataTable(fileName);                  break;              default:                  break;          }          return dt;      }</pre> </div> <p>XlsToDataTable()</p> <div class="ay1code"> <pre class="brush:csharp;">private DataTable XlsToDataTable(string fileName)      {          DataTable dataTable = new DataTable();          Stream stream = null;          try          {              stream = File.OpenRead(fileName);              HSSFWorkbook hssfworkbook = new HSSFWorkbook(stream);              HSSFSheet hssfsheet = (HSSFSheet)hssfworkbook.GetSheetAt(hssfworkbook.ActiveSheetIndex);              HSSFRow hssfrow = (HSSFRow)hssfsheet.GetRow(0);              int lastCellNum = (int)hssfrow.LastCellNum;              for (int i = (int)hssfrow.FirstCellNum; i &lt; lastCellNum; i++)              {                  DataColumn column = new DataColumn(hssfrow.GetCell(i).StringCellValue);                  dataTable.Columns.Add(column);              }              dataTable.TableName = hssfsheet.SheetName;              int lastRowNum = hssfsheet.LastRowNum;              //列名后,从TABLE第二行开始进行填充数据              for (int i = hssfsheet.FirstRowNum + 1; i &lt; hssfsheet.LastRowNum; i++)//              {                  HSSFRow hssfrow2 = (HSSFRow)hssfsheet.GetRow(i);                  DataRow dataRow = dataTable.NewRow();                  for (int j = (int)hssfrow2.FirstCellNum; j &lt; lastCellNum; j++)//                  {                      dataRow[j] = hssfrow2.GetCell(j);//                  }                  dataTable.Rows.Add(dataRow);              }              stream.Close();          }          catch (Exception ex)          {              ScriptManager.RegisterStartupScript(Page, GetType(), "alertForm", "alert(' Xls to DataTable: " + ex.Message + "');", true);          }          finally          {              if (stream != null)              {                  stream.Close();              }          }          return dataTable;      }</pre> </div> <p>XlsxToDataTable()</p> <div class="ay1code"> <pre class="brush:csharp;">public DataTable XlsxToDataTable(string vFilePath)      {          DataTable dataTable = new DataTable();          try          {              SLDocument sldocument = new SLDocument(vFilePath);              dataTable.TableName = sldocument.GetSheetNames()[0];              SLWorksheetStatistics worksheetStatistics = sldocument.GetWorksheetStatistics();              int startColumnIndex = worksheetStatistics.StartColumnIndex;              int endColumnIndex = worksheetStatistics.EndColumnIndex;              int startRowIndex = worksheetStatistics.StartRowIndex;              int endRowIndex = worksheetStatistics.EndRowIndex;              for (int i = startColumnIndex; i &lt;= endColumnIndex; i++)              {                  SLRstType cellValueAsRstType = sldocument.GetCellValueAsRstType(1, i);                  dataTable.Columns.Add(new DataColumn(cellValueAsRstType.GetText(), typeof(string)));              }              for (int j = startRowIndex + 1; j &lt;= endRowIndex; j++)              {                  DataRow dataRow = dataTable.NewRow();                  for (int i = startColumnIndex; i &lt;= endColumnIndex; i++)                  {                      dataRow[i - 1] = sldocument.GetCellValueAsString(j, i);                  }                  dataTable.Rows.Add(dataRow);              }          }          catch (Exception ex)          {              throw new Exception("Xlsx to DataTable: \n" + ex.Message);          }          return dataTable;      }</pre> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-86449.htm">vue中组件之间调用方法</a></p>
+                                        <p>下一个：<a href="/news/article-87074.htm">成都宠物领养中心官网地址电话是多少（成都宠物领养中心官网地址电话是多少啊）</a></p>
                                     </div>
                                 </div>
                 <div class="col-md-3">
@@ -165,9 +165,12 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-4-2-node-share-links.htm" title="Clash翻墙节点 | 4月2日20.1M/S|免费V2ray/Clash/SSR/Shadowrocket订阅节点分享">Clash翻墙节点 | 4月2日20.1M/S|免费V2ray/Clash/SSR/Shadowrocket订阅节点分享</a></li>
+                        <li class="py-2"><a href="/news/article-87075.htm" title="猫疫苗可以自己打吗怎么购买（猫的疫苗可以自己打吗?）">猫疫苗可以自己打吗怎么购买（猫的疫苗可以自己打吗?）</a></li>
                         <li class="py-2"><a href="/news/article-86449.htm" title="vue中组件之间调用方法">vue中组件之间调用方法</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-4-1-free-node-subscribe.htm" title="Clash翻墙节点 | 4月1日20M/S|免费SSR/Shadowrocket/V2ray/Clash订阅节点分享">Clash翻墙节点 | 4月1日20M/S|免费SSR/Shadowrocket/V2ray/Clash订阅节点分享</a></li>
                         <li class="py-2"><a href="/news/article-86450.htm" title="C#把EXCEL数据转换成DataTable_C#教程_">C#把EXCEL数据转换成DataTable_C#教程_</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-1-free-node-subscribe.htm" title="Clash翻墙节点 | 4月1日20M/S|免费SSR/Shadowrocket/V2ray/Clash订阅节点分享">Clash翻墙节点 | 4月1日20M/S|免费SSR/Shadowrocket/V2ray/Clash订阅节点分享</a></li>
+                        <li class="py-2"><a href="/news/article-87074.htm" title="成都宠物领养中心官网地址电话是多少（成都宠物领养中心官网地址电话是多少啊）">成都宠物领养中心官网地址电话是多少（成都宠物领养中心官网地址电话是多少啊）</a></li>
                     </ul>
     </div>
 </div>
@@ -179,7 +182,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
             </li>
                     </ul>
     </div>
