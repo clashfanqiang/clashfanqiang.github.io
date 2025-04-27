@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashfanqiang.github.io/news/article-105014.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>springMVC中的@RequestMapping注解</title>
+        <meta name="description" content="目录 1、@RequestMapping注解的功能 2、@RequestMapping注解的位置 3、@RequestMapping注解的value属性 4、@RequestMapping注解的met" />
+        <link rel="icon" href="/assets/website/img/clashnodegithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash翻墙节点 节点订阅中文官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashfanqiang.github.io/news/article-105014.htm" />
+    <meta property="og:site_name" content="Clash翻墙节点 节点订阅中文官网" />
+    <meta property="og:title" content="springMVC中的@RequestMapping注解" />
+    <meta property="og:image" content="https://clashfanqiang.github.io/uploads/20240611/6ae106a42580ceed58ddc2508b78bde5.webp" />
+        <meta property="og:release_date" content="2025-04-26T07:40:52" />
+    <meta property="og:updated_time" content="2025-04-26T07:40:52" />
+        <meta property="og:description" content="目录 1、@RequestMapping注解的功能 2、@RequestMapping注解的位置 3、@RequestMapping注解的value属性 4、@RequestMapping注解的met" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/clashnodegithub/bootstrap-5.0.0-beta2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/clashnodegithub/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/clashnodegithub/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/clashnodegithub/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/clashnodegithub/main.css" />
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="springMVC中的@RequestMapping注解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PRY7JDGM37"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PRY7JDGM37');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader end -->
+    <!-- ========================= header start ========================= -->
+    <header class="header">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                                                            <a class="navbar-brand" href="/">Clash翻墙节点</a>
+                                                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <div class="ms-auto">
+                                    <ul id="nav" class="navbar-nav ms-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                            <!-- navbar collapse -->
+                        </nav>
+                        <!-- navbar -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- navbar area -->
+    </header>
+    <!-- ========================= header end ========================= -->
+    <!-- ========================= hero-section start ========================= -->
+    <section id="home" class="hero-section">
+        <div class="hero-wrapper" style="height: 250px;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-10">
+                        <div class="hero-content">
+                            <h1>springMVC中的@RequestMapping注解</h1>
+                            <p>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= hero-section end ========================= -->
+    <!-- ========================= about-section start ========================= -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p id="main-toc"><strong>目录</strong></p> <p id="1%E3%80%81%40RequestMapping%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%8A%9F%E8%83%BD-toc" style="margin-left:80px;">1、@RequestMapping注解的功能</p> <p id="2%E3%80%81%40RequestMapping%E6%B3%A8%E8%A7%A3%E7%9A%84%E4%BD%8D%E7%BD%AE-toc" style="margin-left:80px;">2、@RequestMapping注解的位置</p> <p id="3%E3%80%81%40RequestMapping%E6%B3%A8%E8%A7%A3%E7%9A%84value%E5%B1%9E%E6%80%A7-toc" style="margin-left:80px;">3、@RequestMapping注解的value属性</p> <p id="4%E3%80%81%40RequestMapping%E6%B3%A8%E8%A7%A3%E7%9A%84method%E5%B1%9E%E6%80%A7-toc" style="margin-left:80px;">4、@RequestMapping注解的method属性</p> <p id="5%E3%80%81%40RequestMapping%E6%B3%A8%E8%A7%A3%E7%9A%84params%E5%B1%9E%E6%80%A7%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89-toc" style="margin-left:80px;">5、@RequestMapping注解的params属性（了解）</p> <p id="6%E3%80%81%40RequestMapping%E6%B3%A8%E8%A7%A3%E7%9A%84headers%E5%B1%9E%E6%80%A7%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89-toc" style="margin-left:80px;">6、@RequestMapping注解的headers属性（了解）</p> <p id="7%E3%80%81SpringMVC%E6%94%AF%E6%8C%81ant%E9%A3%8E%E6%A0%BC%E7%9A%84%E8%B7%AF%E5%BE%84-toc" style="margin-left:80px;">7、SpringMVC支持ant风格的路径</p> <p id="8%E3%80%81SpringMVC%E6%94%AF%E6%8C%81%E8%B7%AF%E5%BE%84%E4%B8%AD%E7%9A%84%E5%8D%A0%E4%BD%8D%E7%AC%A6%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89-toc" style="margin-left:80px;">8、SpringMVC支持路径中的占位符（重点）</p> <hr id="hr-toc"/> <p><span style="color:#fe2c24;">&nbsp;杨博超老师的笔记</span></p> <h3 id="1%E3%80%81%40RequestMapping%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%8A%9F%E8%83%BD">1、@RequestMapping注解的功能</h3> <p>从注解名称上我们可以看到，@RequestMapping注解的作用就是将请求和处理请求的控制器方法关联起来，建立映射关系。</p> <p>SpringMVC 接收到指定的请求，就会来找到在映射关系中对应的控制器方法来处理这个请求。</p> <h3 id="2%E3%80%81%40RequestMapping%E6%B3%A8%E8%A7%A3%E7%9A%84%E4%BD%8D%E7%BD%AE">2、@RequestMapping注解的位置</h3> <p>@RequestMapping标识一个类：设置映射请求的请求路径的初始信息</p> <p>@RequestMapping标识一个方法：设置映射请求请求路径的具体信息</p> <pre><code class="language-java">@Controller @RequestMapping("/test") public class RequestMappingController {      //此时请求映射所映射的请求的请求路径为：/test/testRequestMapping  &nbsp; &nbsp;@RequestMapping("/testRequestMapping")  &nbsp; &nbsp;public String testRequestMapping(){  &nbsp; &nbsp; &nbsp; &nbsp;return "success";  &nbsp;  }  }</code></pre> <h3 id="3%E3%80%81%40RequestMapping%E6%B3%A8%E8%A7%A3%E7%9A%84value%E5%B1%9E%E6%80%A7">3、@RequestMapping注解的value属性</h3> <p>@RequestMapping注解的value属性通过请求的请求地址匹配请求映射</p> <p>@RequestMapping注解的value属性是一个字符串类型的数组，表示该请求映射能够匹配多个请求地址所对应的请求</p> <p>@RequestMapping注解的value属性必须设置，至少通过请求地址匹配请求映射</p> <pre><code class="language-html">&lt;a th:href="@{/testRequestMapping}"&gt;测试@RequestMapping的value属性--&gt;/testRequestMapping&lt;/a&gt;&lt;br&gt; &lt;a th:href="@{/test}"&gt;测试@RequestMapping的value属性--&gt;/test&lt;/a&gt;&lt;br&gt;</code></pre> <pre><code class="language-java">@RequestMapping(  &nbsp; &nbsp; &nbsp; &nbsp;value = {"/testRequestMapping", "/test"} ) public String testRequestMapping(){  &nbsp; &nbsp;return "success"; }</code></pre> <h3 id="4%E3%80%81%40RequestMapping%E6%B3%A8%E8%A7%A3%E7%9A%84method%E5%B1%9E%E6%80%A7">4、@RequestMapping注解的method属性</h3> <p>@RequestMapping注解的method属性通过请求的请求方式（get或post）匹配请求映射</p> <p>@RequestMapping注解的method属性是一个RequestMethod类型的数组，表示该请求映射能够匹配多种请求方式的请求</p> <p>若当前请求的请求地址满足请求映射的value属性，但是请求方式不满足method属性，则浏览器报错405：Request method 'POST' not supported</p> <pre><code class="language-html">&lt;a th:href="@{/test}"&gt;测试@RequestMapping的value属性--&gt;/test&lt;/a&gt;&lt;br&gt; &lt;form th:action="@{/test}" method="post"&gt;  &nbsp; &nbsp;&lt;input type="submit"&gt; &lt;/form&gt;</code></pre> <pre><code class="language-java">@RequestMapping(  &nbsp; &nbsp; &nbsp; &nbsp;value = {"/testRequestMapping", "/test"},  &nbsp; &nbsp; &nbsp; &nbsp;method = {RequestMethod.GET, RequestMethod.POST} ) public String testRequestMapping(){  &nbsp; &nbsp;return "success"; }</code></pre> <blockquote> <p>注：</p> <p>1、对于处理指定请求方式的控制器方法，SpringMVC中提供了@RequestMapping的派生注解</p> <p>处理get请求的映射--&gt;@GetMapping</p> <p>处理post请求的映射--&gt;@PostMapping</p> <p>处理put请求的映射--&gt;@PutMapping</p> <p>处理delete请求的映射--&gt;@DeleteMapping</p> <p>2、常用的请求方式有get，post，put，delete</p> <p>但是目前浏览器只支持get和post，若在form表单提交时，为method设置了其他请求方式的字符串（put或delete），则按照默认的请求方式get处理</p> <p>若要发送put和delete请求，则需要通过spring提供的过滤器HiddenHttpMethodFilter，在RESTful部分会讲到</p> </blockquote> <h3 id="5%E3%80%81%40RequestMapping%E6%B3%A8%E8%A7%A3%E7%9A%84params%E5%B1%9E%E6%80%A7%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89">5、@RequestMapping注解的params属性（了解）</h3> <p>@RequestMapping注解的params属性通过请求的请求参数匹配请求映射</p> <p>@RequestMapping注解的params属性是一个字符串类型的数组，可以通过四种表达式设置请求参数和请求映射的匹配关系</p> <p>"param"：要求请求映射所匹配的请求必须携带param请求参数</p> <p>"!param"：要求请求映射所匹配的请求必须不能携带param请求参数</p> <p>"param=value"：要求请求映射所匹配的请求必须携带param请求参数且param=value</p> <p>"param!=value"：要求请求映射所匹配的请求必须携带param请求参数但是param!=value</p> <pre><code class="language-html">&lt;a th:href="@{/test(username='admin',password=123456)"&gt;测试@RequestMapping的params属性--&gt;/test&lt;/a&gt;&lt;br&gt;</code></pre> <pre><code class="language-java">@RequestMapping(  &nbsp; &nbsp; &nbsp; &nbsp;value = {"/testRequestMapping", "/test"}  &nbsp; &nbsp; &nbsp;  ,method = {RequestMethod.GET, RequestMethod.POST}  &nbsp; &nbsp; &nbsp;  ,params = {"username","password!=123456"} ) public String testRequestMapping(){  &nbsp; &nbsp;return "success"; }</code></pre> <blockquote> <p>注：</p> <p>若当前请求满足@RequestMapping注解的value和method属性，但是不满足params属性，此时页面回报错400：Parameter conditions "username, password!=123456" not met for actual request parameters: username={admin}, password={123456}</p> </blockquote> <h3 id="6%E3%80%81%40RequestMapping%E6%B3%A8%E8%A7%A3%E7%9A%84headers%E5%B1%9E%E6%80%A7%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89">6、@RequestMapping注解的headers属性（了解）</h3> <p>@RequestMapping注解的headers属性通过请求的请求头信息匹配请求映射</p> <p>@RequestMapping注解的headers属性是一个字符串类型的数组，可以通过四种表达式设置请求头信息和请求映射的匹配关系</p> <p>"header"：要求请求映射所匹配的请求必须携带header请求头信息</p> <p>"!header"：要求请求映射所匹配的请求必须不能携带header请求头信息</p> <p>"header=value"：要求请求映射所匹配的请求必须携带header请求头信息且header=value</p> <p>"header!=value"：要求请求映射所匹配的请求必须携带header请求头信息且header!=value</p> <p>若当前请求满足@RequestMapping注解的value和method属性，但是不满足headers属性，此时页面显示404错误，即资源未找到</p> <h3 id="7%E3%80%81SpringMVC%E6%94%AF%E6%8C%81ant%E9%A3%8E%E6%A0%BC%E7%9A%84%E8%B7%AF%E5%BE%84">7、SpringMVC支持ant风格的路径</h3> <p>？：表示任意的单个字符</p> <p>*：表示任意的0个或多个字符</p> <p>**：表示任意的一层或多层目录</p> <p>注意：在使用**时，只能使用/**/xxx的方式</p> <h3 id="8%E3%80%81SpringMVC%E6%94%AF%E6%8C%81%E8%B7%AF%E5%BE%84%E4%B8%AD%E7%9A%84%E5%8D%A0%E4%BD%8D%E7%AC%A6%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89">8、SpringMVC支持路径中的占位符（重点）</h3> <p>原始方式：/deleteUser?id=1</p> <p>rest方式：/deleteUser/1</p> <p>SpringMVC路径中的占位符常用于RESTful风格中，当请求路径中将某些数据通过路径的方式传输到服务器中，就可以在相应的@RequestMapping注解的value属性中通过占位符{xxx}表示传输的数据，再通过@PathVariable注解，将占位符所表示的数据赋值给控制器方法的形参</p> <pre><code class="language-html">&lt;a th:href="@{/testRest/1/admin}"&gt;测试路径中的占位符--&gt;/testRest&lt;/a&gt;&lt;br&gt;</code></pre> <pre><code class="language-java">@RequestMapping("/testRest/{id}/{username}") public String testRest(@PathVariable("id") String id, @PathVariable("username") String username){  &nbsp; &nbsp;System.out.println("id:"+id+",username:"+username);  &nbsp; &nbsp;return "success"; } //最终输出的内容为--&gt;id:1,username:admin</code></pre> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-104086.htm">极品vue3中setup的细节,以及定义多个响应式reactive</a></p>
+                                        <p>下一个：<a href="/news/article-105015.htm">免费领养宠物平台工作好做吗安全吗（正规免费领养宠物平台）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-91154.htm" title="使用Nginx实现多个Tomcat负载均衡">使用Nginx实现多个Tomcat负载均衡</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-9-free-subscribe-node.htm" title="Clash翻墙节点 | 4月9日22.8M/S|免费Clash/V2ray/SSR/Shadowrocket订阅节点分享">Clash翻墙节点 | 4月9日22.8M/S|免费Clash/V2ray/SSR/Shadowrocket订阅节点分享</a></li>
+                        <li class="py-2"><a href="/news/article-98163.htm" title="集成神经网络的缺点是,各种神经网络的优缺点">集成神经网络的缺点是,各种神经网络的优缺点</a></li>
+                        <li class="py-2"><a href="/news/article-96690.htm" title="动物防疫站周六周日上班吗（动物疫病预防控制中心周末上班吗）">动物防疫站周六周日上班吗（动物疫病预防控制中心周末上班吗）</a></li>
+                        <li class="py-2"><a href="/news/article-92901.htm" title="有一个数字矩阵，矩阵的每行从左到右是递增的，矩阵从上到下是递增的，请编写程序在这样的矩阵中查找某个数字是否存在。">有一个数字矩阵，矩阵的每行从左到右是递增的，矩阵从上到下是递增的，请编写程序在这样的矩阵中查找某个数字是否存在。</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-27-node-share-links.htm" title="Clash翻墙节点 | 4月27日19.5M/S|免费Clash/SSR/Shadowrocket/V2ray订阅节点分享">Clash翻墙节点 | 4月27日19.5M/S|免费Clash/SSR/Shadowrocket/V2ray订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-20-free-high-speed-nodes.htm" title="Clash翻墙节点 | 4月20日19.9M/S|免费SSR/V2ray/Shadowrocket/Clash订阅节点分享">Clash翻墙节点 | 4月20日19.9M/S|免费SSR/V2ray/Shadowrocket/Clash订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-12-free-v2ray.htm" title="Clash翻墙节点 | 4月12日19.1M/S|免费Clash/V2ray/SSR/Shadowrocket订阅节点分享">Clash翻墙节点 | 4月12日19.1M/S|免费Clash/V2ray/SSR/Shadowrocket订阅节点分享</a></li>
+                        <li class="py-2"><a href="/news/article-97344.htm" title="动物疫苗可以快递吗安全吗现在（宠物疫苗可以寄快递吗）">动物疫苗可以快递吗安全吗现在（宠物疫苗可以寄快递吗）</a></li>
+                        <li class="py-2"><a href="/news/article-100983.htm" title="开个拼多多无货源店能挣钱吗（开拼多多无货源网店）">开个拼多多无货源店能挣钱吗（开拼多多无货源网店）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">81</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= about-section end ========================= -->
+        <!-- ========================= footer start ========================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="copyright">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                <p>
+                    Clash翻墙节点 节点订阅中文官网 版权所有 Powered by WordPress
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer end ========================= -->
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/clashnodegithub/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnodegithub/bootstrap-5.0.0-beta2.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnodegithub/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnodegithub/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnodegithub/polyfill.js"></script>
+    <script src="/assets/website/js/frontend/clashnodegithub/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
