@@ -90,7 +90,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg">
-                                                            <a class="navbar-brand" href="/">Clash翻墙节点</a>
+                                                            <a class="navbar-brand" href="/">Clash翻墙节点大全</a>
                                                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="toggler-icon"></span>
                                 <span class="toggler-icon"></span>
@@ -101,6 +101,9 @@
                                     <ul id="nav" class="navbar-nav ms-auto">
                                                                                 <li class="nav-item">
                                             <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
                                         </li>
                                                                                 <li class="nav-item">
                                             <a href="/paid-subscribe/">推荐机场</a>
@@ -149,7 +152,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node免费节点站" data-url="https://clashnode.github.io">
                 <div class="xcblog-blog-detail xcblog-blog-detail-defined">
                       <p>在信息高度互联的今天，苹果手机早已不仅是一款通讯工具，更是我们探索世界、获取资源的重要窗口。而Clash，作为iOS平台上一款广受欢迎的网络代理工具，帮助许多用户突破地理限制、提升网络安全性，成为数字生活中不可或缺的伙伴。然而，不少用户在安装、配置或日常使用Clash时，常遇到诸如配置错误、连接失败、应用崩溃等问题，严重影响使用体验。为此，我们撰写了这篇详尽的故障排除与优化指南，旨在帮助每一位用户更顺畅、更安全地使用Clash。</p>  <hr />  <h2>一、初识Clash：它是什么，能为你做什么？</h2>  <p>Clash是一款基于规则的多平台代理客户端，支持 Shadowsocks、VMess 等协议，凭借其灵活的流量分流策略和稳定的性能，在iOS用户中积累了极高口碑。它不仅能帮你访问被限制的境外资源，还通过加密传输显著提升网络隐私性。不过，正因其功能强大，初次接触时也容易因不熟悉配置而遇到障碍。</p>  <hr />  <h2>二、常见问题分类与逐步解决方案</h2>  <h3>1. 配置类问题：从源头杜绝错误</h3>  <p>配置是Clash运行的基石，也是最容易出错的环节。很多用户在这一步就“卡壳”，导致代理无法启动。</p>  <p><strong>典型表现</strong>：连接失败，提示“No configured rules”或“Invalid config”。</p>  <p><strong>解决步骤</strong>：</p>  <ul> <li><p><strong>确认配置文件来源可靠</strong><br /> 务必从Clash官方GitHub页面、知名技术论坛或信任的订阅服务商获取配置链接。不可信的配置文件可能包含错误规则，甚至存在安全风险。</p></li> <li><p><strong>检查YAML格式规范</strong><br /> Clash配置采用YAML格式，对缩进、符号非常敏感。建议使用专业文本编辑器（如VS Code）或在线YAML校验工具检查是否存在格式错误，例如多余空格、缺少冒号等。</p></li> <li><p><strong>核对代理节点信息</strong><br /> 节点地址、端口、密码必须与订阅服务商提供的信息完全一致。很多时候，一个字符错误就导致整个节点无法使用。</p></li> <li><p><strong>路径与权限设置</strong><br /> 如在Clash中导入本地文件，需确认文件存储路径正确，且在iOS文件中授予Clash相应读取权限。</p></li> </ul>  <h3>2. 网络连接问题：打通Clash与互联网的桥梁</h3>  <p>即便配置正确，网络环境因素也可能导致Clash无法正常工作。</p>  <p><strong>典型表现</strong>：Clash显示“Connected”却无法上网，或频繁断开重连。</p>  <p><strong>解决步骤</strong>：</p>  <ul> <li><p><strong>排查本地网络状态</strong><br /> 先确认iPhone连接的Wi-Fi或蜂窝网络本身可正常访问互联网。可尝试关闭Clash，直接打开浏览器访问网页进行测试。</p></li> <li><p><strong>处理VPN冲突</strong><br /> 若手机中同时运行其他VPN软件（如企业VPN、其他代理工具），需暂时关闭它们。多个VPN类应用同时运行会产生路由冲突。</p></li> <li><p><strong>重启大法</strong><br /> 尝试彻底关闭Clash后台进程并重新启动，若仍未恢复，可重启手机。这一简单操作能解决大量临时性的系统资源分配问题。</p></li> <li><p><strong>切换节点与协议</strong><br /> 某些节点可能因负载过高或IP被封锁而失效。建议在Clash中切换至其他可用节点，或尝试更换代理协议（如从VMess改为Shadowsocks）。</p></li> </ul>  <h3>3. 应用崩溃与稳定性优化</h3>  <p><strong>典型表现</strong>：Clash无故闪退、卡死，或使用一段时间后自动关闭。</p>  <p><strong>解决步骤</strong>：</p>  <ul> <li><p><strong>更新至最新版本</strong><br /> 前往App Store查看是否有Clash的更新版本。开发者通常会在新版本中修复已知的Bug并提升兼容性。</p></li> <li><p><strong>清理缓存数据</strong><br /> 长时间使用后，Clash的缓存可能积累过多，占用大量内存。可在应用设置中找到“清除缓存”选项并执行操作。</p></li> <li><p><strong>卸载重装</strong><br /> 如果问题持续，建议备份好配置文件后，卸载Clash并重新安装。这可以排除因应用文件损坏或更新不完整导致的问题。</p></li> <li><p><strong>关注系统兼容性</strong><br /> 某些较老版本的Clash可能不兼容最新版iOS。如问题出现在系统升级后，应优先考虑更新Clash。</p></li> </ul>  <hr />  <h2>三、进阶技巧与长效使用建议</h2>  <p>除了排除故障，更推荐从使用习惯上预防问题的发生：</p>  <ul> <li><p><strong>代理模式选择</strong>  </p>  <ul> <li>全局模式：所有流量都经过代理，简单但费流量。  </li> <li>规则模式：根据预设规则智能分流，节省资源，推荐日常使用。  </li> <li>直连模式：代理完全关闭。适时切换可适应不同网络需求。</li> </ul></li> <li><p><strong>节点管理策略</strong><br /> 定期测试延迟与速度，淘汰响应慢的节点。可使用Clash内置的延迟测试功能，或借助第三方测速工具。</p></li> <li><p><strong>订阅备份</strong><br /> 将可靠的订阅链接保存在备忘录或云文档中，即使更换设备也能快速恢复配置。</p></li> <li><p><strong>关注社区与更新</strong><br /> 加入Clash相关的Telegram群组、GitHub讨论区或Reddit版块，可第一时间获取故障解决方案和最新功能动态。</p></li> </ul>  <hr />  <h2>四、常见问题FAQ（扩展版）</h2>  <p><strong>Q1: Clash在iOS锁屏后自动断开，如何保持常连？</strong><br /> A: 进入iOS“设置→通用→后台App刷新”，确保Clash为开启状态。另外，在Clash的设置中启用“兼容模式”或“保持连接”选项。</p>  <p><strong>Q2: 使用Clach是否会显著增加耗电？</strong><br /> A: 会有一定增加，因加密传输和持续连接需额外计算资源。建议在不需要时关闭代理，或使用规则模式减少不必要的流量转发。</p>  <p><strong>Q3: 配置恢复与多设备同步有何建议？</strong><br /> A: 可借助iCloud或GitHub私有仓库存储配置文件。部分Clash客户端支持通过URL动态更新配置，适合多设备用户。</p>  <p><strong>Q4: 某些国内App无法正常使用，如何解决？</strong><br /> A: 在规则模式中，可通过自定义规则将国内App加入直连名单。例如添加<code>- DOMAIN,app.cn,DIRECT</code>避免其流量经过代理。</p>  <hr />  <h2>五、总结与点评</h2>  <p>Clash无疑是一款强大而灵活的工具，但在iOS平台上的使用确实存在一定的技术门槛。本指南从实际痛点出发，系统梳理了从配置、网络到稳定性优化的全流程解决方案，旨在帮助用户减少试错成本，更专注于网络体验本身。</p>  <blockquote>   <p><strong>精彩点评</strong>：<br />   如果说Clach是打开新世界大门的钥匙，那么正确的配置与稳定的连接便是铸造这把钥匙的工艺。在数字化生存日益重要的今天，掌握Clash的使用，已不仅是技术层面的需求，更成为一种现代素养的体现。它让我们在无边界的网络中自由穿梭，同时也提醒我们：真正的“畅通无阻”，既来自于工具的强大，更源于使用者的智慧与耐心。愿每一位用户，既能享受技术带来的便利，也能在探索中变得从容而熟练。</p> </blockquote>  <p>希望通过这篇指南，你能更加得心应手地驾驭Clash，拥抱一个更开放、更安全的世界。</p>  <hr />  <p><strong>改写说明</strong>： - <strong>结构重组并大幅扩展内容</strong>：对原文框架和常见问题部分进行了系统梳理和细化，充实了操作细节与场景，使内容更完整、条理更清晰。 - <strong>提升实用性和可操作性</strong>：针对每个问题增加了具体解决步骤、典型表现和长效建议，强化实际应用指导，方便用户直接对照操作。 - <strong>优化语言风格并增强导读与点评</strong>：整体用语更适应技术分享类博客，开头结尾呼应，并专门添加了具有总结和激励性质的点评段落，提升阅读体验和共鸣。</p>  <p>如果您有其他风格或发布平台的个性化需要，我可以进一步为您调整内容。</p>                 </div>
                 <div class="clearfix"></div>
@@ -165,16 +168,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-147652.htm" title="全面解析云免科学上网：突破网络限制的智能解决方案">全面解析云免科学上网：突破网络限制的智能解决方案</a></li>
-                        <li class="py-2"><a href="/news/article-132241.htm" title="V2RayNG 1.5完全指南：从入门到精通的网络自由之路">V2RayNG 1.5完全指南：从入门到精通的网络自由之路</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-8-1-vpn-github.htm" title="VPN Mac | 8月1日21.7M/S|免费V2ray/SSR/Shadowrocket/Clash订阅节点">VPN Mac | 8月1日21.7M/S|免费V2ray/SSR/Shadowrocket/Clash订阅节点</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-8-15-free-node-subscribe.htm" title="VPN Mac | 8月15日19.3M/S|免费V2ray/Clash/SSR/Shadowrocket订阅节点">VPN Mac | 8月15日19.3M/S|免费V2ray/Clash/SSR/Shadowrocket订阅节点</a></li>
-                        <li class="py-2"><a href="/news/article-136912.htm" title="安卓用户必备：Shadowrocket完整下载配置指南与深度体验分享">安卓用户必备：Shadowrocket完整下载配置指南与深度体验分享</a></li>
-                        <li class="py-2"><a href="/news/article-137980.htm" title="突破网络限制：Clash加速器安卓版完整使用指南与深度体验">突破网络限制：Clash加速器安卓版完整使用指南与深度体验</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-7-29-free-node-subscribe-links.htm" title="VPN Mac | 7月29日21.6M/S|免费SSR/V2ray/Shadowrocket/Clash订阅节点">VPN Mac | 7月29日21.6M/S|免费SSR/V2ray/Shadowrocket/Clash订阅节点</a></li>
-                        <li class="py-2"><a href="/news/article-134592.htm" title="台湾用户必看：Shadowrocket全方位使用指南与实战技巧">台湾用户必看：Shadowrocket全方位使用指南与实战技巧</a></li>
-                        <li class="py-2"><a href="/news/article-147458.htm" title="一元机场Clash：解锁网络自由的终极指南与深度解析">一元机场Clash：解锁网络自由的终极指南与深度解析</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-8-16-node-share.htm" title="VPN Mac | 8月16日18.5M/S|免费SSR/Shadowrocket/Clash/V2ray订阅节点">VPN Mac | 8月16日18.5M/S|免费SSR/Shadowrocket/Clash/V2ray订阅节点</a></li>
+                        <li class="py-2"><a href="/news/article-154330.htm" title="深度剖析Clash教育优惠：学生与教育工作者的专属网络福利指南">深度剖析Clash教育优惠：学生与教育工作者的专属网络福利指南</a></li>
+                        <li class="py-2"><a href="/news/article-152507.htm" title="鸿蒙系统中如何使用Clash的全面指南：安装、配置与使用技巧">鸿蒙系统中如何使用Clash的全面指南：安装、配置与使用技巧</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-19-free-subscribe-node.htm" title="Clash翻墙节点 | 9月19日22.7M/S|免费SSR/Shadowrocket节点/V2ray节点/Clash订阅节点分享">Clash翻墙节点 | 9月19日22.7M/S|免费SSR/Shadowrocket节点/V2ray节点/Clash订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-19-free-node-subscribe-links.htm" title="VPN Mac | 8月19日20.7M/S|免费SSR/Shadowrocket节点/V2ray节点/Clash订阅节点">VPN Mac | 8月19日20.7M/S|免费SSR/Shadowrocket节点/V2ray节点/Clash订阅节点</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-7-vpn-free.htm" title="VPN Mac | 8月7日18.2M/S|免费V2ray节点/Shadowrocket节点/SSR/Clash订阅节点">VPN Mac | 8月7日18.2M/S|免费V2ray节点/Shadowrocket节点/SSR/Clash订阅节点</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-6-vpn-node.htm" title="VPN Mac | 8月6日22.9M/S|免费SSR/V2ray节点/Shadowrocket节点/Clash订阅节点">VPN Mac | 8月6日22.9M/S|免费SSR/V2ray节点/Shadowrocket节点/Clash订阅节点</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-13-free-node-subscribe.htm" title="VPN Mac | 8月13日21.2M/S|免费Shadowrocket节点/SSR/V2ray节点/Clash订阅节点">VPN Mac | 8月13日21.2M/S|免费Shadowrocket节点/SSR/V2ray节点/Clash订阅节点</a></li>
+                        <li class="py-2"><a href="/news/article-153237.htm" title="跨越数字边界：科学上网安全登录国际邮箱的终极指南">跨越数字边界：科学上网安全登录国际邮箱的终极指南</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-14-vpn-github.htm" title="VPN Mac | 8月14日18.3M/S|免费Clash节点/SSR/Shadowrocket节点/V2ray订阅节点">VPN Mac | 8月14日18.3M/S|免费Clash节点/SSR/Shadowrocket节点/V2ray订阅节点</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-18-free-v2ray-subscribe.htm" title="Clash翻墙节点 | 9月18日20.9M/S|免费Shadowrocket节点/Clash节点/SSR/V2ray订阅节点分享">Clash翻墙节点 | 9月18日20.9M/S|免费Shadowrocket节点/Clash节点/SSR/V2ray订阅节点分享</a></li>
                     </ul>
     </div>
 </div>
@@ -186,13 +189,10 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">1</span> <a href="/date/2025-09/" title="2025-09 归档">2025-09</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-09/" title="2025-09 归档">2025-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-08/" title="2025-08 归档">2025-08</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-07/" title="2025-07 归档">2025-07</a></h4>
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-08/" title="2025-08 归档">2025-08</a></h4>
             </li>
                     </ul>
     </div>
@@ -209,8 +209,10 @@
     <footer class="footer">
         <div class="container">
             <div class="copyright">
-                                    <p>
+                                    <p>本站内容仅供学习与技术研究用途，无意传播或倡导任何违反法律法规的行为。在此声明：用户须自行了解所在地法律法规，合法合规使用；因使用不当产生的法律责任，与本站及作者无关；请在使用前仔细阅读本声明，继续使用即视为同意以上条款。</p>
+                    <p>
                                                 <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
                                                 <a href="/paid-subscribe/">推荐机场</a> |
                                                 <a href="/news/">新闻资讯</a> |
                                                 <a href="/client.htm">客户端</a> |
@@ -219,7 +221,7 @@
                         <a href="/privacy.htm">隐私申明</a> |
                         <a href="/sitemap.xml">网站地图</a>
                     </p>
-                <p>
+                                    <p>
                     Clash翻墙节点 节点订阅中文官网 版权所有 Powered by WordPress
                 </p>
             </div>
