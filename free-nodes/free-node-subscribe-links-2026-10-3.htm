@@ -308,19 +308,9 @@ A4：建议选择知名厂商或平台购买，确认其隐私政策和服务承
         策略组会根据节点延迟和丢包率选择最佳节点。结合路由规则，可保证国内流量直连、海外流量走最优节点，提高访问速度和连接稳定性，优化整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 服务端出现 handshake timeout 如何处理？</h5></div>
+    <div class="panel-heading"><h5>PassWall2 如何根据延迟自动切换节点？</h5></div>
     <div class="panel-body">
-        该错误通常由网络延迟或证书配置不一致导致。请检查服务器带宽是否充足、TLS 证书链完整，并确保客户端 SNI 与证书匹配。必要时更换节点或优化拥塞控制算法。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 的策略组如何实现按域名分流？</h5></div>
-    <div class="panel-body">
-        Sing-box 支持根据域名规则匹配流量，将不同网站或应用流量分配到指定节点。结合策略组自动切换低延迟节点，可优化访问速度，保证网络稳定性和流畅体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 在 iOS 上无法连接时如何调试？</h5></div>
-    <div class="panel-body">
-        检查 iOS 的 VPN 配置权限是否授予，确认订阅链接或手动配置填写无误；查看 Surfboard 的日志或诊断页面，查看是否为 DNS 问题、TLS 错误或节点超时，并尝试切换节点或重启应用。<hr />    </div>
+        PassWall2 会定期测试节点延迟，并结合策略组自动切换到延迟最低的节点。无需用户手动操作，即可保证网页、视频和游戏流量的高速稳定访问，提高整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何为 Vmess 节点生成安全的 UUID？</h5></div>
@@ -328,14 +318,19 @@ A4：建议选择知名厂商或平台购买，确认其隐私政策和服务承
         UUID 应使用标准的 128 位格式，可使用系统命令如 `uuidgen` 或在线 UUID 生成器生成随机、唯一的 ID；不要使用默认或弱随机值，定期更换以降低被滥用或泄露的风险。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>PassWall2 的节点测速结果如何影响分流？</h5></div>
+    <div class="panel-body">
+        PassWall2 会根据节点延迟和成功率自动调整策略组选择最优节点。测速结果直接影响程序选择出口，从而提高连接速度和稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>QuantumultX 如何实现按协议类型分流？</h5></div>
     <div class="panel-body">
         QuantumultX 可根据 TCP、UDP 或特定应用协议分流流量，结合策略组选择节点。这样可以为游戏、视频或广告屏蔽等应用提供最佳网络体验，提高访问速度和稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 的节点测速结果如何影响分流？</h5></div>
+    <div class="panel-heading"><h5>Surfboard 在 iOS 上无法连接时如何调试？</h5></div>
     <div class="panel-body">
-        PassWall2 会根据节点延迟和成功率自动调整策略组选择最优节点。测速结果直接影响程序选择出口，从而提高连接速度和稳定性。<hr />    </div>
+        检查 iOS 的 VPN 配置权限是否授予，确认订阅链接或手动配置填写无误；查看 Surfboard 的日志或诊断页面，查看是否为 DNS 问题、TLS 错误或节点超时，并尝试切换节点或重启应用。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Potatso Lite 是否可以手动管理多个节点？</h5></div>
@@ -348,9 +343,14 @@ A4：建议选择知名厂商或平台购买，确认其隐私政策和服务承
         Sing-box 支持根据端口匹配流量，将不同应用流量分配到指定节点。结合策略组可实现精准分流，提高访问速度和网络稳定性，优化整体网络体验和管理效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 如何根据延迟自动切换节点？</h5></div>
+    <div class="panel-heading"><h5>Trojan 服务端出现 handshake timeout 如何处理？</h5></div>
     <div class="panel-body">
-        PassWall2 会定期测试节点延迟，并结合策略组自动切换到延迟最低的节点。无需用户手动操作，即可保证网页、视频和游戏流量的高速稳定访问，提高整体网络体验。    </div>
+        该错误通常由网络延迟或证书配置不一致导致。请检查服务器带宽是否充足、TLS 证书链完整，并确保客户端 SNI 与证书匹配。必要时更换节点或优化拥塞控制算法。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 的策略组如何实现按域名分流？</h5></div>
+    <div class="panel-body">
+        Sing-box 支持根据域名规则匹配流量，将不同网站或应用流量分配到指定节点。结合策略组自动切换低延迟节点，可优化访问速度，保证网络稳定性和流畅体验。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -398,16 +398,16 @@ A4：建议选择知名厂商或平台购买，确认其隐私政策和服务承
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-17.htm" title="Clash翻墙节点 | 9月17日22.7M/S|免费Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点订阅节点分享">Clash翻墙节点 | 9月17日22.7M/S|免费Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-v2ray-ss-ssr-2026-9-29.htm" title="Clash翻墙节点 | 9月29日20.6M/S|免费V2ray节点/SSR节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点订阅节点分享">Clash翻墙节点 | 9月29日20.6M/S|免费V2ray节点/SSR节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-5.htm" title="Clash翻墙节点 | 9月5日22.6M/S|免费Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Singbox节点/Clash节点订阅节点分享">Clash翻墙节点 | 9月5日22.6M/S|免费Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Singbox节点/Clash节点订阅节点分享</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-9-8-free-subscribe-node.htm" title="Clash翻墙节点 | 9月8日19.1M/S|免费Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/V2ray节点/SSR节点订阅节点分享">Clash翻墙节点 | 9月8日19.1M/S|免费Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/V2ray节点/SSR节点订阅节点分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-26-free-high-speed-nodes.htm" title="Clash翻墙节点 | 9月26日22.7M/S|免费SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点订阅节点分享">Clash翻墙节点 | 9月26日22.7M/S|免费SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点订阅节点分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-v2ray-2026-9-25.htm" title="Clash翻墙节点 | 9月25日21.1M/S|免费Trojan节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点订阅节点分享">Clash翻墙节点 | 9月25日21.1M/S|免费Trojan节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-10-11.htm" title="Clash翻墙节点 | 10月11日23M/S|免费Singbox节点/Trojan节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点订阅节点分享">Clash翻墙节点 | 10月11日23M/S|免费Singbox节点/Trojan节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-10-free-node-subscribe.htm" title="Clash翻墙节点 | 10月10日18.7M/S|免费Shadowrocket节点/SSR节点/Trojan节点/Clash节点/Singbox节点/V2ray节点订阅节点分享">Clash翻墙节点 | 10月10日18.7M/S|免费Shadowrocket节点/SSR节点/Trojan节点/Clash节点/Singbox节点/V2ray节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-13.htm" title="Clash翻墙节点 | 9月13日22.2M/S|免费Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/Trojan节点/SSR节点订阅节点分享">Clash翻墙节点 | 9月13日22.2M/S|免费Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/Trojan节点/SSR节点订阅节点分享</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-10-3.htm" title="Clash翻墙节点 | 10月3日23M/S|免费Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Trojan节点订阅节点分享">Clash翻墙节点 | 10月3日23M/S|免费Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Trojan节点订阅节点分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-24-free-v2ray-subscribe.htm" title="Clash翻墙节点 | 9月24日22.8M/S|免费V2ray节点/Trojan节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点订阅节点分享">Clash翻墙节点 | 9月24日22.8M/S|免费V2ray节点/Trojan节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点订阅节点分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-27.htm" title="Clash翻墙节点 | 9月27日21.4M/S|免费Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点订阅节点分享">Clash翻墙节点 | 9月27日21.4M/S|免费Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点订阅节点分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-30-free-v2ray-subscribe.htm" title="Clash翻墙节点 | 9月30日21.7M/S|免费Clash节点/SSR节点/Singbox节点/Shadowrocket节点/V2ray节点/Trojan节点订阅节点分享">Clash翻墙节点 | 9月30日21.7M/S|免费Clash节点/SSR节点/Singbox节点/Shadowrocket节点/V2ray节点/Trojan节点订阅节点分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-7.htm" title="Clash翻墙节点 | 9月7日19.3M/S|免费Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点订阅节点分享">Clash翻墙节点 | 9月7日19.3M/S|免费Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点订阅节点分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-10-free-subscribe-node.htm" title="Clash翻墙节点 | 9月10日19.3M/S|免费SSR节点/Trojan节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点订阅节点分享">Clash翻墙节点 | 9月10日19.3M/S|免费SSR节点/Trojan节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点订阅节点分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-18-free-subscribe-node.htm" title="Clash翻墙节点 | 9月18日20.5M/S|免费Shadowrocket节点/Singbox节点/Trojan节点/Clash节点/SSR节点/V2ray节点订阅节点分享">Clash翻墙节点 | 9月18日20.5M/S|免费Shadowrocket节点/Singbox节点/Trojan节点/Clash节点/SSR节点/V2ray节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-4-free-subscribe-node.htm" title="Clash翻墙节点 | 10月4日19.2M/S|免费Singbox节点/Trojan节点/V2ray节点/SSR节点/Clash节点/Shadowrocket节点订阅节点分享">Clash翻墙节点 | 10月4日19.2M/S|免费Singbox节点/Trojan节点/V2ray节点/SSR节点/Clash节点/Shadowrocket节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-28-node-share.htm" title="Clash翻墙节点 | 9月28日22.7M/S|免费V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Trojan节点/Singbox节点订阅节点分享">Clash翻墙节点 | 9月28日22.7M/S|免费V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Trojan节点/Singbox节点订阅节点分享</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -419,7 +419,7 @@ A4：建议选择知名厂商或平台购买，确认其隐私政策和服务承
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
+                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
